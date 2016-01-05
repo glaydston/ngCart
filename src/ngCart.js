@@ -147,6 +147,12 @@ angular.module('ngCart', ['ngCart.directives'])
             $rootScope.$broadcast('ngCart:itemRemoved', item);
             $rootScope.$broadcast('ngCart:change', {});
         };
+        
+        this.removeItems = function(){
+            this.$cart.items = [];
+            $rootScope.$broadcast('ngCart:itemRemoved', {});
+            $rootScope.$broadcast('ngCart:change', {});
+        };
 
         this.empty = function () {
             
@@ -333,4 +339,4 @@ angular.module('ngCart', ['ngCart.directives'])
 
     }])
 
-    .value('version', '1.0.0');
+    .value('version', '1.0.1');
